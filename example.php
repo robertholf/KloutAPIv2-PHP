@@ -1,6 +1,6 @@
 <?php 
 	require_once("../src/KloutAPIv2.class.php");
-	// Set your client key and secret
+	// Set your key
 	$kloutapi_key = "rsf2ytqvg3yr5syffrbkr7t2";
 	// Load the Klout API library
 	$klout = new KloutAPIv2($kloutapi_key);
