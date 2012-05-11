@@ -24,7 +24,6 @@ What are the basic methods?
 	 * $id The Klout ID to look up
 
 
-
 	KloutUser($id)
 	 * Looks up Klout User Details and Score
 	 * $id The Klout ID to look up
