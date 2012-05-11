@@ -19,6 +19,7 @@
 	<title>KloutAPIv2-PHP :: Example</title>
 </head>
 <body>
+
 <h1>Klout ID Lookup</h1>
 <p>
 <h3>By Screen Name</h3>
