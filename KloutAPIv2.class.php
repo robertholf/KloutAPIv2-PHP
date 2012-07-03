@@ -5,7 +5,7 @@
  * 
  * @package KloutAPIv2-PHP 
  * @author Rob Bertholf <rob@bertholf.com>, @rob
- * @version 1.0.0
+ * @version 1.0.1
  * @license GPLv3 <http://www.gnu.org/licenses/gpl.txt>
  */
 
@@ -162,6 +162,48 @@ class KloutAPIv2 {
 		return $this->GET($url,$params);
 
 	}
+
+
+
+/******************************************************/
+//       Scores
+/******************************************************/
+
+	/** 
+	 * KloutScore
+	 * Looks up Klout Score, does not return any other data
+	 * @param String $id The Klout ID to look up
+	 */
+	public function KloutScore($id){
+		// Use the Klout Score Data call to pull just the Score
+		$CurlResult = $this->KloutUserScore($id);
+		$ResultString = json_decode($CurlResult);
+		$KloutScore = $ResultString->score;
+
+		return $KloutScore; 
+	}
+
+	/** 
+	 * KloutScore
+	 * Returns changes in klout score
+	 * @param String $id The Klout ID to look up
+	 * @param String $period options are either day, week, month
+	 */
+	public function KloutScoreChanges($id, $period){
+		// Use the Klout Score Data call to pull just the Score
+		$CurlResult = $this->KloutUserScore($id);
+		$ResultString = json_decode($CurlResult);
+		if ($period == "day") {
+			$KloutScoreChanges = $ResultString->scoreDelta->dayChange;
+		} elseif ($period == "week") {
+			$KloutScoreChanges = $ResultString->scoreDelta->weekChange;
+		} else {
+			$KloutScoreChanges = $ResultString->scoreDelta->monthChange;
+		}
+		return $KloutScoreChanges; 
+	}
+
+
 
 
 
