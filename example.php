@@ -1,7 +1,7 @@
 <?php 
 	require_once("KloutAPIv2.class.php");
 	// Set your client key and secret
-	$kloutapi_key = "rsf2ytqvg3yr5syffrbkr7t2";
+	$kloutapi_key = "ENTER YOUR KEY";
 	// Load the Foursquare API library
 	$klout = new KloutAPIv2($kloutapi_key);
 	// Get Klout ID
